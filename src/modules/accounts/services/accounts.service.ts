@@ -30,11 +30,7 @@ export class AccountsService {
     password: string;
   }): Promise<Account | null> {
     const account = await this.accountModel.findOne({ username }).exec();
-    if (
-      account &&
-      account.approved &&
-      (await bcrypt.compare(password, account.password))
-    ) {
+    if (account && (await bcrypt.compare(password, account.password))) {
       return account;
     }
     return null;
