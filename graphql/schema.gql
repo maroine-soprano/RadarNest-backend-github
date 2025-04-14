@@ -1,0 +1,111 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+type Parameters {
+  ad_blocker: Boolean
+  apparent_temperature: Float
+  asn: String
+  battery_charging: Boolean
+  battery_level: Float
+  browser: String
+  browser_language: String
+  browser_vendor: String
+  browser_version: String
+  city: String
+  continent: String
+  country: String
+  currency: String
+  currency_rate: Float
+  day_of_month: String
+  day_of_week: String
+  device: String
+  device_brand: String
+  device_model: String
+  device_type: String
+  dimensions: String
+  elevation: Float
+  height: Float
+  holiday_name: String
+  hour: String
+  humidity: Float
+  is_capital: Boolean
+  is_day: Boolean
+  is_eu: Boolean
+  is_holiday: String
+  is_touch_capable: Boolean
+  isp: String
+  language: String
+  language_code: String
+  language_locality: String
+  latitude: Float
+  longitude: Float
+  month: String
+  network_speed: String
+  os: String
+  os_version: String
+  platform: String
+  postal: String
+  precipitation: Float
+  product_id: String
+  product_tag: String
+  referer_domain: String
+  referer_url: String
+  region: String
+  save_data: String
+  screen_area: String
+  screen_dimensions: String
+  screen_height: Float
+  screen_orientation: String
+  screen_width: Float
+  season: String
+  store_id: String
+  temperature: Float
+  timezone: String
+  user_agent_string: String
+  utm_campaign: String
+  utm_content: String
+  utm_medium: String
+  utm_source: String
+  utm_term: String
+  view_area: Float
+  view_ratio: Float
+  weather_code: Float
+  width: Float
+}
+
+type Query {
+  adBlockerUsage: JSON!
+  browserPopularity: JSON!
+  deviceTypeDistribution: JSON!
+  dynamicQuery(searchquery: [SearchQueryInput!]!): [User!]!
+  hourlySessionCounts: [JSON!]!
+  hourlyUsage: JSON!
+  networkSpeedVsViewRatio: JSON!
+  osUsage: JSON!
+  refererDomainCounts: JSON!
+  seasonalTrends: JSON!
+  sessionsByCountry: JSON!
+  topCampaigns: JSON!
+  topCities: JSON!
+  utmSourceMedium: JSON!
+  weekdayWeekendUsage: JSON!
+}
+
+input SearchQueryInput {
+  key: String!
+  operator: String!
+  value: String
+}
+
+type User {
+  _id: String!
+  parameters: Parameters!
+  timestamp: Float!
+  user_id: String!
+}
